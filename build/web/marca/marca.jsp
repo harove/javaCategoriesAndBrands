@@ -4,7 +4,10 @@
     Author     : edgar.haro
 --%>
 
+<%@page import="Modelo.Marca"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -12,12 +15,23 @@
         <title>Insertar Marca</title>
     </head>
     <body>
-        <form action="../InsertarMarcaControlador">
-            <label>Codigo de la marca</label>
-            <input type ="text" placeholder="escriba codigo de la marca" name ="codigoMarca" />
-            <label>Nombre de la marca</label>
-            <input type ="text" placeholder="escriba nombre de la marca" name ="nombreMarca" />
-            <input type ="submit" value ="enviar" />  
-        </form>
+
+        <a href="../listMarcaControlador">Listar Marcas</a>
+
+        <%ArrayList<Marca> marcas = (ArrayList<Marca>) request.getAttribute("marcas");%>
+
+        <table>
+            <% if (marcas != null) { %>
+            <%  for (Marca marca : marcas) {%>
+            <tr>
+                <td><%= marca.getCodigoMarca()%></td>
+                <td><%= marca.getNombreMarca()%></td>
+            </tr>
+            <%}%>
+            <%}%>   
+        </table>
+
+
+
     </body>
 </html>
