@@ -35,7 +35,7 @@ public class DeleteMarcaControlador extends HttpServlet {
             int codigoMarca =  Integer.parseInt(request.getParameter("id"));
             MarcaDao marcadao = new MarcaDao();
             boolean success = marcadao.deleteMarca(codigoMarca);
-            
+            response.sendRedirect("listMarcaControlador");
         }
     }
 
