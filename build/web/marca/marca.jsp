@@ -15,9 +15,16 @@
         <title>Insertar Marca</title>
     </head>
     <body>
+        
+        <form action="InsertarMarcaControlador">
+            <label>Código de la Marca</label>
+            <input name="codigoMarca" placeholder="codigo"/>
+            <label>Nombre de la Marca</label>
+            <input name="nombreMarca" placeholder="nombre"/>
+            <input type="submit" value="send" />
+        </form>
 
-        <a href="../listMarcaControlador">Listar Marcas</a>
-
+        <h1>List of Brands</h1>
         <table>
             <c:forEach var="marca" items="${marcas}">
                 <tr>
@@ -27,6 +34,9 @@
                 </tr>
             </c:forEach>
         </table>
+        
+        
+        
         
     </body>
 </html>

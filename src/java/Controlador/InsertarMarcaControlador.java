@@ -33,6 +33,7 @@ public class InsertarMarcaControlador extends HttpServlet {
                 out.println("Brand inserted in the right way");
             else
                 out.println("Brand could not be inserted");
+            response.sendRedirect("listMarcaControlador");
         }
     }
 
