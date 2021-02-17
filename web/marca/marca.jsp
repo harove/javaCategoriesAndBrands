@@ -18,13 +18,12 @@
 
         <a href="../listMarcaControlador">Listar Marcas</a>
 
-  
-
         <table>
             <c:forEach var="marca" items="${marcas}">
                 <tr>
                     <td>${marca.getCodigoMarca()}</td>
                     <td>${marca.getNombreMarca()}</td>
+                    <td><a href="DeleteMarcaControlador?id=<c:out value='${marca.getCodigoMarca()}'/>">Delete </a></td>
                 </tr>
             </c:forEach>
         </table>

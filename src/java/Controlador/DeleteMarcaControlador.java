@@ -5,6 +5,7 @@
  */
 package Controlador;
 
+import Dao.MarcaDao;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
@@ -31,6 +32,9 @@ public class DeleteMarcaControlador extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
+            int codigoMarca =  Integer.parseInt(request.getParameter("id"));
+            MarcaDao marcadao = new MarcaDao();
+            boolean success = marcadao.deleteMarca(codigoMarca);
             
         }
     }
