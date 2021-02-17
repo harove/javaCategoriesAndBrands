@@ -14,6 +14,6 @@
     </head>
     <body>
         <h1>Hello World!</h1>
-        <a href="marca/marca.jsp">Marca</a>
+        <a href="listMarcaControlador">Marca</a>
     </body>
 </html>
