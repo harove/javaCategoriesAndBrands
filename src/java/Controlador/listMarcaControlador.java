@@ -40,7 +40,6 @@ public class listMarcaControlador extends HttpServlet {
             marcas = marcadao.listMarca();
             request.setAttribute("marcas", marcas);
             request.getRequestDispatcher("/marca/marca.jsp").forward(request, response);
-    
         }
     }
 

@@ -18,20 +18,16 @@
 
         <a href="../listMarcaControlador">Listar Marcas</a>
 
-        <%ArrayList<Marca> marcas = (ArrayList<Marca>) request.getAttribute("marcas");%>
+  
 
         <table>
-            <% if (marcas != null) { %>
-            <%  for (Marca marca : marcas) {%>
-            <tr>
-                <td><%= marca.getCodigoMarca()%></td>
-                <td><%= marca.getNombreMarca()%></td>
-            </tr>
-            <%}%>
-            <%}%>   
+            <c:forEach var="marca" items="${marcas}">
+                <tr>
+                    <td>${marca.getCodigoMarca()}</td>
+                    <td>${marca.getNombreMarca()}</td>
+                </tr>
+            </c:forEach>
         </table>
-
-
-
+        
     </body>
 </html>
