@@ -17,6 +17,24 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class MarcaDao {
+    public boolean updateMarca(Marca dto){
+       boolean success = false;
+       try{
+        Connection conexion = Conexion.getConnection();
+        PreparedStatement ps = conexion.prepareStatement("Update marca set nombremarca = ? WHERE codigomarca = ?");
+        ps.setString(1, dto.getNombreMarca());
+        ps.setInt(1, dto.getCodigoMarca());
+        success = ps.execute();
+        return success;
+       }catch(SQLException ex){
+           Logger.getLogger(MarcaDao.class.getName()).log(Level.SEVERE, null, ex);
+           return success;
+       }
+       
+    }
+    
+    
+    
     public boolean insertarMarca(Marca dto){
         try {
             Connection conexion = Conexion.getConnection();

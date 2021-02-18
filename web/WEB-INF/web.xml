@@ -2,7 +2,7 @@
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
     <welcome-file-list>
         <welcome-file>index.jsp</welcome-file>
-    </welcome-file-list>   
+    </welcome-file-list>
     <servlet>
         <servlet-name>InsertarMarcaControlador</servlet-name>
         <servlet-class>Controlador.InsertarMarcaControlador</servlet-class>
@@ -15,6 +15,10 @@
         <servlet-name>listMarcaControlador</servlet-name>
         <servlet-class>Controlador.listMarcaControlador</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UpdateMarcaControlador</servlet-name>
+        <servlet-class>Controlador.UpdateMarcaControlador</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>InsertarMarcaControlador</servlet-name>
         <url-pattern>/InsertarMarcaControlador</url-pattern>
@@ -26,6 +30,10 @@
     <servlet-mapping>
         <servlet-name>listMarcaControlador</servlet-name>
         <url-pattern>/listMarcaControlador</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateMarcaControlador</servlet-name>
+        <url-pattern>/UpdateMarcaControlador</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
