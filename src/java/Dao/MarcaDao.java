@@ -17,14 +17,35 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class MarcaDao {
+    public Marca getMarca(int codigoMarca){
+        Marca marca = new Marca();
+        try{
+            Connection conn = Conexion.getConnection();
+            PreparedStatement ps = conn.prepareStatement("SELECT nombremarca FROM marca WHERE codigomarca = ?");
+            ps.setInt(1, codigoMarca);
+            ResultSet rs = ps.executeQuery();
+            if (rs.next()){
+                marca.setCodigoMarca(codigoMarca);
+                marca.setNombreMarca(rs.getString("nombremarca"));
+            }else{
+                marca = null;
+            }
+            return(marca);
+        }catch(SQLException ex){
+            Logger.getLogger(MarcaDao.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+    }
+    
+    
     public boolean updateMarca(Marca dto){
        boolean success = false;
        try{
         Connection conexion = Conexion.getConnection();
         PreparedStatement ps = conexion.prepareStatement("Update marca set nombremarca = ? WHERE codigomarca = ?");
         ps.setString(1, dto.getNombreMarca());
-        ps.setInt(1, dto.getCodigoMarca());
-        success = ps.execute();
+        ps.setInt(2, dto.getCodigoMarca());
+        success = ps.executeUpdate()>0;
         return success;
        }catch(SQLException ex){
            Logger.getLogger(MarcaDao.class.getName()).log(Level.SEVERE, null, ex);

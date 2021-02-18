@@ -19,6 +19,10 @@
         <servlet-name>UpdateMarcaControlador</servlet-name>
         <servlet-class>Controlador.UpdateMarcaControlador</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GetMarcaControlador</servlet-name>
+        <servlet-class>Controlador.GetMarcaControlador</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>InsertarMarcaControlador</servlet-name>
         <url-pattern>/InsertarMarcaControlador</url-pattern>
@@ -34,6 +38,10 @@
     <servlet-mapping>
         <servlet-name>UpdateMarcaControlador</servlet-name>
         <url-pattern>/UpdateMarcaControlador</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetMarcaControlador</servlet-name>
+        <url-pattern>/GetMarcaControlador</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

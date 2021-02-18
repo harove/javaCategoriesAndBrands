@@ -31,7 +31,7 @@
                     <td>${marca.getCodigoMarca()}</td>
                     <td>${marca.getNombreMarca()}</td>
                     <td><a href="DeleteMarcaControlador?id=<c:out value='${marca.getCodigoMarca()}'/>">Delete </a></td>
-                    <td><a href="UpdateMarcaControlador?id=<c:out value='${marca.getCodigoMarca()}'/>">Update </a></td>
+                    <td><a href="GetMarcaControlador?codigoMarca=<c:out value='${marca.getCodigoMarca()}'/>">Edit </a></td>
                     
                 </tr>
             </c:forEach>
